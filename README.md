@@ -1,57 +1,37 @@
 # Решатель квадратных уравнений
 
-Данный проект демонстрирует работу модуля unittest, на примере тестирования функции нахождения корней квадратичныхуравнений. 
+Здерсь реализован питоновский модуль, находящий корни квадратных  уравнений. 
 Подробнее о квадратных уранениях можно почитать [здеcь](http://school-assistant.ru/?predmet=algebra&theme=kvadratnie_uravnenija)
 
 # Как использовать
-Для использования запустить скрипт test.py, который проведет тестирование функции `get_root` модуля `quadratic_equation`
-Варианты вывода:
-1. Если все корректно:
-```
-Ran 4 tests in 0.001s
+Для использования требуется импортировать функцию `get_roots` из модуля quadratic_equation
+В качестве аргументов `get_roots` передаются коэфициенты a, b, c. 
+Функция возращает
+ 1. 2 значения корней уравнения , если дискриминант(далее D) больше 0
+ 2. 1 значение корня и None , если D=0
+ 3. 2 пустых значения , если D<0
 
-OK
-```
-2. Если есть ошибки:
-```
-F.FF
-======================================================================
-FAIL: test_first_root_less_than_second (__main__.QuadraticEquationTestCase)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "D:/projects/devmanorg/7_mistery_fix/tests.py", line 13, in test_first_root_less_than_second
-    self.assertEqual(root1, -3)
-AssertionError: None != -3
+Вместе с проектом поставляется скрипт `test.py` , реализующий автомаматическую проверку корректности работы `get_roots`
 
-======================================================================
-FAIL: test_second_root_is_none_if_one_solution (__main__.QuadraticEquationTestCase)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "D:/projects/devmanorg/7_mistery_fix/tests.py", line 18, in test_second_root_is_none_if_one_solution
-    self.assertIsNotNone(root1)
-AssertionError: unexpectedly None
-
-======================================================================
-FAIL: test_solves_real_roots (__main__.QuadraticEquationTestCase)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "D:/projects/devmanorg/7_mistery_fix/tests.py", line 9, in test_solves_real_roots
-    self.assertEqual(root1, 1)
-AssertionError: None != 1
-
-----------------------------------------------------------------------
-Ran 4 tests in 0.001s
-
-FAILED (failures=3)
-```
 # Как запустить
 
 Скрипт требует для своей работы установленного интерпретатора Python версии 3.5
 
 Запуск на Linux:
-
 ```bash
-python test.py # может понадобиться вызов python3 вместо python, ....
+python # может понадобиться вызов python3 вместо python, зависит от настроек операционной системы
+>>> from quadratic_equation import get_roots
+>>> get_roots(a=1,b=-2,c=3) #Корней не существует
+(None, None)
+>>> get_roots(a=1,b=2,c=-3) #2 корня
+(-3.0, 1.0)
+>>> get_roots(a=1,b=-2,c=1) #1 корень
+(1.0, None)
+```
+ Запуск теста:
+```bash
+python tests.py
+....
 ----------------------------------------------------------------------
 Ran 4 tests in 0.001s
 

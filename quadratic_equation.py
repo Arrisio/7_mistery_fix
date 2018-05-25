@@ -8,9 +8,7 @@ def get_roots(a, b, c):
     elif discriminant == 0:
         root = -b/(2 * a)
         return root, None
-    elif discriminant > 0:
+    else:
         root1 = (-b - sqrt(discriminant)) / (2 * a)
         root2 = (-b + sqrt(discriminant)) / (2 * a)
         return root1, root2
-    else:
-        print('в этой вселенное такого быть не должно...')
