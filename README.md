@@ -17,7 +17,7 @@
 
 Скрипт требует для своей работы установленного интерпретатора Python версии 3.5
 
-Запуск на Linux:
+Использование в среде Python:
 ```python
 >>> from quadratic_equation import get_roots
 >>> get_roots(a=1,b=-2,c=3) #Корней не существует
