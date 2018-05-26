@@ -18,8 +18,7 @@
 Скрипт требует для своей работы установленного интерпретатора Python версии 3.5
 
 Запуск на Linux:
-```bash
-python # может понадобиться вызов python3 вместо python, зависит от настроек операционной системы
+```python
 >>> from quadratic_equation import get_roots
 >>> get_roots(a=1,b=-2,c=3) #Корней не существует
 (None, None)
